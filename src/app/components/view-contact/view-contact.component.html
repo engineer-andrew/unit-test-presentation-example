@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-between my-2" *ngIf="contact">
+  <div class="flex-1">{{ contact.id }}</div>
+  <div class="flex-3">{{ contact.firstName }}</div>
+  <div class="flex-3">{{ contact.lastName }}</div>
+  <div class="flex-3">{{ contact.phoneNumber | phone }}</div>
+  <div class="flex-5">{{ contact.address | address }}</div>
+  <div class="flex-2 d-flex justify-content-end">
+    <ng-icon name="bootstrapPencil" size="1.5rem" class="c-pointer me-2" (click)="edit()"></ng-icon>
+    <ng-icon name="bootstrapTrash" size="1.5rem" class="c-pointer" (click)="delete()"></ng-icon>
+  </div>
+</div>

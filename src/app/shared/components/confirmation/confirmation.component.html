@@ -1,0 +1,14 @@
+<div class="modal-header align-items-center">
+  <h4 class="m-0 flex-1">{{ title }}</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="dismiss()">
+  </button>
+</div>
+<div class="modal-body d-flex flex-column">
+  <div class="card-body">
+    <h1>{{ message }}</h1>
+  </div>
+  <div class="card-footer mt-3 align-self-end">
+    <button class="btn btn-primary me-3" (click)="confirm()">{{ confirmationButtonText }}</button>
+    <button class="btn btn-danger" (click)="reject()">{{ rejectionButtonText }}</button>
+  </div>
+</div>

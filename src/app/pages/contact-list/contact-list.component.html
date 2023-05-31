@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between">
+      Contacts
+      <button class="btn btn-primary" (click)="add()">Add Contact</button>
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-between my-2">
+        <div class="flex-1">ID</div>
+        <div class="flex-3">First Name</div>
+        <div class="flex-3">Last Name</div>
+        <div class="flex-3">Phone Number</div>
+        <div class="flex-5">Address</div>
+        <div class="flex-2"></div>
+      </div>
+      <app-view-contact *ngFor="let contact of contacts" [contact]="contact"></app-view-contact>
+    </div>
+  </div>
+</div>
