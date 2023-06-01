@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { catchError, map, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of, throwError } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
 import { Contact } from '../../../data';
@@ -39,6 +39,11 @@ export class ContactDataService {
         map((contacts: Array<Contact>) => {
           this.contactStateService.set(contacts);
           return contacts;
+        }),
+        catchError((error: any) => {
+          this.contactStateService.set(null);
+
+          return throwError(() => error);
         })
       );
   }
