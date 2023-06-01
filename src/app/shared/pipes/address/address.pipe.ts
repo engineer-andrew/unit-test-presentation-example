@@ -17,7 +17,7 @@ export class AddressPipe implements PipeTransform {
       formattedAddress += ` ${input.street2}`;
     }
 
-    formattedAddress += `, ${input.city} ${input.state} ${input.postalCode}`;
+    formattedAddress += ` ${input.city}, ${input.state} ${input.postalCode}`;
 
     return formattedAddress;
   }
