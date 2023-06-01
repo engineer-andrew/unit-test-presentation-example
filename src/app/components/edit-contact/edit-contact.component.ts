@@ -5,12 +5,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { PhoneNumberMask, states } from '../../data/constants';
 import { ContactDataService } from '../../core';
-import { Address, Contact, StateOrProvince } from '../../data/model';
+import { Address, Contact, StateOrProvince } from '../../data';
 
 @Component({
   selector: 'app-edit-contact',
-  templateUrl: './edit-contact.component.html',
-  styleUrls: ['./edit-contact.component.scss']
+  templateUrl: './edit-contact.component.html'
 })
 export class EditContactComponent implements OnInit {
   @Input() public contact!: Contact;
@@ -45,6 +44,10 @@ export class EditContactComponent implements OnInit {
   }
 
   public save(): void {
+    if (!this.editForm.valid) {
+      return;
+    }
+
     this.contact.address = {
       city: this.editForm.get('address.city')?.value,
       postalCode: this.editForm.get('address.postalCode')?.value,

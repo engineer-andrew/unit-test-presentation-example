@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { ObservableStore } from '@codewithdan/observable-store';
 
-import { Contact, StoreState } from '../../../data/model';
+import { Contact, StoreState } from '../../../data';
 
 @Injectable({
   providedIn: 'root'

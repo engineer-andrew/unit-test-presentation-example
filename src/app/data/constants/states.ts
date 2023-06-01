@@ -1,4 +1,4 @@
-import { StateOrProvince } from '../model';
+import { StateOrProvince } from '../models';
 
 export const states: Array<StateOrProvince> = [{
     shortName: 'AL',

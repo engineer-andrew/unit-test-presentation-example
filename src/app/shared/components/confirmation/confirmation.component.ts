@@ -1,22 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-confirmation',
-  templateUrl: './confirmation.component.html',
-  styleUrls: ['./confirmation.component.scss']
+  templateUrl: './confirmation.component.html'
 })
-export class ConfirmationComponent implements OnInit {
+export class ConfirmationComponent {
   @Input() public confirmationButtonText: string = 'Yes';
   @Input() public message!: string;
   @Input() public rejectionButtonText: string = 'No';
   @Input() public title: string = 'Are you sure?';
 
   constructor(private activeModal: NgbActiveModal) { }
-
-  public ngOnInit(): void {
-  }
 
   public confirm(): void {
     this.activeModal.close(true);

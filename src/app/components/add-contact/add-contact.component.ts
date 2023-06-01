@@ -3,14 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { PhoneNumberMask, states } from '../../data/constants';
 import { ContactDataService } from '../../core';
-import { Address, Contact, StateOrProvince } from '../../data/model';
+import { Address, Contact, PhoneNumberMask, StateOrProvince, states } from '../../data';
 
 @Component({
   selector: 'app-add-contact',
-  templateUrl: './add-contact.component.html',
-  styleUrls: ['./add-contact.component.scss']
+  templateUrl: './add-contact.component.html'
 })
 export class AddContactComponent implements OnInit {
   public addForm!: FormGroup;

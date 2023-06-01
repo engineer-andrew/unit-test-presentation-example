@@ -11,7 +11,7 @@ import { bootstrapPencil, bootstrapTrash } from '@ng-icons/bootstrap-icons';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './components/view-contact/view-contact.component';
+import { ViewContactComponent } from './components/view-contact/view-contact.component';
 import { ContactListComponent } from './pages/contact-list/contact-list.component';
 import { EditContactComponent } from './components/edit-contact/edit-contact.component';
 import { SharedModule } from './shared/shared.module';
@@ -19,7 +19,7 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
+    ViewContactComponent,
     ContactListComponent,
     EditContactComponent,
     AddContactComponent

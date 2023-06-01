@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
-import { Contact } from '../../../data/model';
+import { Contact } from '../../../data';
 import { ContactStateService } from '../../state-providers';
 
 @Injectable({

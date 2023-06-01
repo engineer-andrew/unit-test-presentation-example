@@ -4,15 +4,14 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ConfirmationComponent } from '../../shared/components';
 import { ContactDataService } from '../../core';
+import { Contact } from '../../data';
 import { EditContactComponent } from '../edit-contact/edit-contact.component';
-import { Contact } from '../../data/model';
 
 @Component({
   selector: 'app-view-contact',
-  templateUrl: './view-contact.component.html',
-  styleUrls: ['./view-contact.component.scss']
+  templateUrl: './view-contact.component.html'
 })
-export class ContactComponent implements OnInit {
+export class ViewContactComponent {
   // there's a better way to do this in Angular 16, but this works for now
   @Input() public contact!: Contact;
 
@@ -20,9 +19,6 @@ export class ContactComponent implements OnInit {
     private contactDataService: ContactDataService,
     private modalService: NgbModal
   ) { }
-
-  public ngOnInit(): void {
-  }
 
   public delete(): void {
     const modalRef = this.modalService.open(ConfirmationComponent);
@@ -34,7 +30,13 @@ export class ContactComponent implements OnInit {
         if (result) {
           this.contactDataService.delete(this.contact).subscribe({
             // TODO: show a success message
-            next: () => {},
+            next: (result: boolean) => {
+              if (result) {
+                this.contactDataService.get().subscribe({
+                  error: () => {}
+                });
+              }
+            },
             // TODO: show an error message
             error: () => {}
           })
